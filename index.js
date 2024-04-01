@@ -1,22 +1,22 @@
-let firstCard = 10;
-let secondCard = 4;
+const messageEl = document.getElementById('message-el');
+const sumEl = document.getElementById('sum-el');
+const cardsEl = document.getElementById('cards-el');
+const startBtn = document.querySelector('.start-btn');
+const cardBtn = document.querySelector('.card-btn');
+const firstCard = 10;
+const secondCard = 4;
+let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
-let isAlive = true;
+let  isAlive = true;
 let message = '';
-let messageEl = document.getElementById('message-el');
-let sumEl = document.getElementById('sum-el');
-let cardsEl = document.getElementById('cards-el');
-let startBtn = document.querySelector('.start-btn');
-let cardBtn = document.querySelector('.card-btn');
-
 
 function startGame() {
   renderGame();
 }
 
 function renderGame() {
-  cardsEl.textContent = 'Cards: ' + firstCard + ' ' + secondCard;
+  cardsEl.textContent = 'Cards: ' + cards[0] + ' ' + cards[1];
   sumEl.textContent = 'Sum: ' + sum;
   if (sum <= 20) {
     message = 'Do you want to draw a new card?';
