@@ -15,7 +15,7 @@ let player = {
     chips: 200
 }
 
-playerEl.textContent = `${player.name} $${player.chips}`
+playerEl.textContent = `${player.name}: $${player.chips}`
 
 
 function getRandomCard(){
