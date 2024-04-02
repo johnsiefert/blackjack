@@ -3,13 +3,19 @@ const sumEl = document.getElementById('sum-el');
 const cardsEl = document.getElementById('cards-el');
 const startBtn = document.querySelector('.start-btn');
 const cardBtn = document.querySelector('.card-btn');
+const playerEl = document.querySelector("#player")
 
 let cards = []
 let sum = 0
 let hasBlackJack = false;
 let  isAlive = false;
 let message = '';
+let player = {
+    name: "Timmy",
+    chips: 200
+}
 
+playerEl.textContent = `${player.name} $${player.chips}`
 
 
 function getRandomCard(){
@@ -52,10 +58,12 @@ function renderGame() {
 
 
 function newCard() {
-let card = getRandomCard();
-sum += card
-cards.push(card);
-renderGame();
+    if(isAlive === true && hasBlackJack === false){
+      let card = getRandomCard();
+      sum += card;
+      cards.push(card);
+      renderGame();
+    }
 }
 
 
